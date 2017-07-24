@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
 			this.menuStrip1 = new System.Windows.Forms.MenuStrip();
 			this.mnuConnect = new System.Windows.Forms.ToolStripMenuItem();
@@ -48,9 +49,14 @@
 			this.tbSet = new System.Windows.Forms.ToolStripButton();
 			this.tbTest = new System.Windows.Forms.ToolStripButton();
 			this.tbClose = new System.Windows.Forms.ToolStripButton();
+			this.label1 = new System.Windows.Forms.Label();
+			this.pictureBox1 = new System.Windows.Forms.PictureBox();
+			this.timer1 = new System.Windows.Forms.Timer(this.components);
+			this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
 			this.menuStrip1.SuspendLayout();
 			this.toolStrip1.SuspendLayout();
 			this.statusStrip1.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// menuStrip1
@@ -83,6 +89,7 @@
 			this.mnuSet.Name = "mnuSet";
 			this.mnuSet.Size = new System.Drawing.Size(228, 32);
 			this.mnuSet.Text = "&Select Database";
+			this.mnuSet.Click += new System.EventHandler(this.mnuSet_Click);
 			// 
 			// mnuTest
 			// 
@@ -90,6 +97,7 @@
 			this.mnuTest.Name = "mnuTest";
 			this.mnuTest.Size = new System.Drawing.Size(228, 32);
 			this.mnuTest.Text = "&Test";
+			this.mnuTest.Click += new System.EventHandler(this.mnuTest_Click);
 			// 
 			// toolStripMenuItem1
 			// 
@@ -123,6 +131,7 @@
 			this.mnuClose.Name = "mnuClose";
 			this.mnuClose.Size = new System.Drawing.Size(218, 32);
 			this.mnuClose.Text = "Close Program";
+			this.mnuClose.Click += new System.EventHandler(this.mnuClose_Click);
 			// 
 			// toolStrip1
 			// 
@@ -198,6 +207,7 @@
 			this.tbSet.Name = "tbSet";
 			this.tbSet.Size = new System.Drawing.Size(52, 65);
 			this.tbSet.Text = "Select";
+			this.tbSet.Click += new System.EventHandler(this.tbSet_Click);
 			// 
 			// tbTest
 			// 
@@ -208,6 +218,7 @@
 			this.tbTest.Name = "tbTest";
 			this.tbTest.Size = new System.Drawing.Size(52, 65);
 			this.tbTest.Text = "Test";
+			this.tbTest.Click += new System.EventHandler(this.tbTest_Click);
 			// 
 			// tbClose
 			// 
@@ -217,6 +228,37 @@
 			this.tbClose.Name = "tbClose";
 			this.tbClose.Size = new System.Drawing.Size(52, 65);
 			this.tbClose.Text = "Exit";
+			this.tbClose.Click += new System.EventHandler(this.tbClose_Click);
+			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.Font = new System.Drawing.Font("Comic Sans MS", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label1.Location = new System.Drawing.Point(1, 167);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(216, 180);
+			this.label1.TabIndex = 6;
+			this.label1.Text = "Welcome\r\nTo\r\nDogBytes";
+			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// pictureBox1
+			// 
+			this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
+			this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+			this.pictureBox1.Location = new System.Drawing.Point(264, 104);
+			this.pictureBox1.Name = "pictureBox1";
+			this.pictureBox1.Size = new System.Drawing.Size(338, 314);
+			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.pictureBox1.TabIndex = 7;
+			this.pictureBox1.TabStop = false;
+			// 
+			// timer1
+			// 
+			this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+			// 
+			// openFileDialog1
+			// 
+			this.openFileDialog1.FileName = "openFileDialog1";
 			// 
 			// Form1
 			// 
@@ -224,6 +266,8 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(602, 463);
 			this.ControlBox = false;
+			this.Controls.Add(this.pictureBox1);
+			this.Controls.Add(this.label1);
 			this.Controls.Add(this.statusStrip1);
 			this.Controls.Add(this.toolStrip1);
 			this.Controls.Add(this.menuStrip1);
@@ -236,6 +280,7 @@
 			this.toolStrip1.PerformLayout();
 			this.statusStrip1.ResumeLayout(false);
 			this.statusStrip1.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -262,6 +307,10 @@
 		private System.Windows.Forms.StatusStrip statusStrip1;
 		private System.Windows.Forms.ToolStripStatusLabel ssDB;
 		private System.Windows.Forms.ToolStripStatusLabel ssCon;
+		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.PictureBox pictureBox1;
+		private System.Windows.Forms.Timer timer1;
+		private System.Windows.Forms.OpenFileDialog openFileDialog1;
 	}
 }
 
