@@ -35,24 +35,26 @@
 			this.mnuSet = new System.Windows.Forms.ToolStripMenuItem();
 			this.mnuTest = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+			this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.mnuCustomer = new System.Windows.Forms.ToolStripMenuItem();
 			this.mnuHelp = new System.Windows.Forms.ToolStripMenuItem();
 			this.mnuAbout = new System.Windows.Forms.ToolStripMenuItem();
 			this.mnuExit = new System.Windows.Forms.ToolStripMenuItem();
 			this.mnuClose = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+			this.tbSet = new System.Windows.Forms.ToolStripButton();
 			this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+			this.tbTest = new System.Windows.Forms.ToolStripButton();
+			this.tbClose = new System.Windows.Forms.ToolStripButton();
 			this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
 			this.tsbExit = new System.Windows.Forms.ToolStripButton();
 			this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-			this.ssCon = new System.Windows.Forms.ToolStripStatusLabel();
 			this.ssDB = new System.Windows.Forms.ToolStripStatusLabel();
-			this.tbSet = new System.Windows.Forms.ToolStripButton();
-			this.tbTest = new System.Windows.Forms.ToolStripButton();
-			this.tbClose = new System.Windows.Forms.ToolStripButton();
+			this.ssCon = new System.Windows.Forms.ToolStripStatusLabel();
 			this.label1 = new System.Windows.Forms.Label();
-			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.timer1 = new System.Windows.Forms.Timer(this.components);
 			this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.menuStrip1.SuspendLayout();
 			this.toolStrip1.SuspendLayout();
 			this.statusStrip1.SuspendLayout();
@@ -65,6 +67,7 @@
 			this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
 			this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuConnect,
+            this.editToolStripMenuItem,
             this.mnuHelp,
             this.mnuExit});
 			this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -104,6 +107,21 @@
 			this.toolStripMenuItem1.Name = "toolStripMenuItem1";
 			this.toolStripMenuItem1.Size = new System.Drawing.Size(225, 6);
 			// 
+			// editToolStripMenuItem
+			// 
+			this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuCustomer});
+			this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+			this.editToolStripMenuItem.Size = new System.Drawing.Size(58, 32);
+			this.editToolStripMenuItem.Text = "Edit";
+			// 
+			// mnuCustomer
+			// 
+			this.mnuCustomer.Name = "mnuCustomer";
+			this.mnuCustomer.Size = new System.Drawing.Size(181, 32);
+			this.mnuCustomer.Text = "Customer";
+			this.mnuCustomer.Click += new System.EventHandler(this.mnuCustomer_Click);
+			// 
 			// mnuHelp
 			// 
 			this.mnuHelp.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -117,6 +135,7 @@
 			this.mnuAbout.Name = "mnuAbout";
 			this.mnuAbout.Size = new System.Drawing.Size(145, 32);
 			this.mnuAbout.Text = "About";
+			this.mnuAbout.Click += new System.EventHandler(this.mnuAbout_Click);
 			// 
 			// mnuExit
 			// 
@@ -150,11 +169,42 @@
 			this.toolStrip1.TabIndex = 3;
 			this.toolStrip1.Text = "toolStrip1";
 			// 
+			// tbSet
+			// 
+			this.tbSet.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.tbSet.Image = global::sqDogBytes.Properties.Resources.sqlite_logo;
+			this.tbSet.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.tbSet.Name = "tbSet";
+			this.tbSet.Size = new System.Drawing.Size(52, 65);
+			this.tbSet.Text = "Select";
+			this.tbSet.Click += new System.EventHandler(this.tbSet_Click);
+			// 
 			// toolStripSeparator1
 			// 
 			this.toolStripSeparator1.AutoSize = false;
 			this.toolStripSeparator1.Name = "toolStripSeparator1";
 			this.toolStripSeparator1.Size = new System.Drawing.Size(16, 68);
+			// 
+			// tbTest
+			// 
+			this.tbTest.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.tbTest.Enabled = false;
+			this.tbTest.Image = ((System.Drawing.Image)(resources.GetObject("tbTest.Image")));
+			this.tbTest.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.tbTest.Name = "tbTest";
+			this.tbTest.Size = new System.Drawing.Size(52, 65);
+			this.tbTest.Text = "Test";
+			this.tbTest.Click += new System.EventHandler(this.tbTest_Click);
+			// 
+			// tbClose
+			// 
+			this.tbClose.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.tbClose.Image = ((System.Drawing.Image)(resources.GetObject("tbClose.Image")));
+			this.tbClose.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.tbClose.Name = "tbClose";
+			this.tbClose.Size = new System.Drawing.Size(52, 65);
+			this.tbClose.Text = "Exit";
+			this.tbClose.Click += new System.EventHandler(this.tbClose_Click);
 			// 
 			// toolStripSeparator2
 			// 
@@ -183,14 +233,6 @@
 			this.statusStrip1.TabIndex = 4;
 			this.statusStrip1.Text = "statusStrip1";
 			// 
-			// ssCon
-			// 
-			this.ssCon.Image = global::sqDogBytes.Properties.Resources.off_icon;
-			this.ssCon.Name = "ssCon";
-			this.ssCon.Size = new System.Drawing.Size(54, 40);
-			this.ssCon.Text = " Off";
-			this.ssCon.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			// 
 			// ssDB
 			// 
 			this.ssDB.BackColor = System.Drawing.SystemColors.ControlLightLight;
@@ -199,36 +241,13 @@
 			this.ssDB.Size = new System.Drawing.Size(45, 40);
 			this.ssDB.Text = "    ";
 			// 
-			// tbSet
+			// ssCon
 			// 
-			this.tbSet.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.tbSet.Image = global::sqDogBytes.Properties.Resources.sqlite_logo;
-			this.tbSet.ImageTransparentColor = System.Drawing.Color.Magenta;
-			this.tbSet.Name = "tbSet";
-			this.tbSet.Size = new System.Drawing.Size(52, 65);
-			this.tbSet.Text = "Select";
-			this.tbSet.Click += new System.EventHandler(this.tbSet_Click);
-			// 
-			// tbTest
-			// 
-			this.tbTest.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.tbTest.Enabled = false;
-			this.tbTest.Image = ((System.Drawing.Image)(resources.GetObject("tbTest.Image")));
-			this.tbTest.ImageTransparentColor = System.Drawing.Color.Magenta;
-			this.tbTest.Name = "tbTest";
-			this.tbTest.Size = new System.Drawing.Size(52, 65);
-			this.tbTest.Text = "Test";
-			this.tbTest.Click += new System.EventHandler(this.tbTest_Click);
-			// 
-			// tbClose
-			// 
-			this.tbClose.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.tbClose.Image = ((System.Drawing.Image)(resources.GetObject("tbClose.Image")));
-			this.tbClose.ImageTransparentColor = System.Drawing.Color.Magenta;
-			this.tbClose.Name = "tbClose";
-			this.tbClose.Size = new System.Drawing.Size(52, 65);
-			this.tbClose.Text = "Exit";
-			this.tbClose.Click += new System.EventHandler(this.tbClose_Click);
+			this.ssCon.Image = global::sqDogBytes.Properties.Resources.off_icon;
+			this.ssCon.Name = "ssCon";
+			this.ssCon.Size = new System.Drawing.Size(54, 40);
+			this.ssCon.Text = " Off";
+			this.ssCon.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
 			// label1
 			// 
@@ -241,6 +260,14 @@
 			this.label1.Text = "Welcome\r\nTo\r\nDogBytes";
 			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
+			// timer1
+			// 
+			this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+			// 
+			// openFileDialog1
+			// 
+			this.openFileDialog1.FileName = "openFileDialog1";
+			// 
 			// pictureBox1
 			// 
 			this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
@@ -251,14 +278,6 @@
 			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.pictureBox1.TabIndex = 7;
 			this.pictureBox1.TabStop = false;
-			// 
-			// timer1
-			// 
-			this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-			// 
-			// openFileDialog1
-			// 
-			this.openFileDialog1.FileName = "openFileDialog1";
 			// 
 			// Form1
 			// 
@@ -313,6 +332,8 @@
 		private System.Windows.Forms.PictureBox pictureBox1;
 		private System.Windows.Forms.Timer timer1;
 		private System.Windows.Forms.OpenFileDialog openFileDialog1;
+		private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem mnuCustomer;
 	}
 }
 

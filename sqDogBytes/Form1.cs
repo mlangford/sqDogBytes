@@ -10,6 +10,8 @@ namespace sqDogBytes
 		public Form1()
 		{
 			InitializeComponent();
+			//makes the application appear centre screen
+			this.StartPosition = FormStartPosition.CenterScreen;
 		}
 
 		//create a connection object
@@ -138,6 +140,17 @@ namespace sqDogBytes
 				tbTest.Enabled = false;
 				ssDB.Image = Properties.Resources.db_unpicked;
 			}
+		}
+
+		private void mnuAbout_Click(object sender, EventArgs e)
+		{
+			MessageBox.Show("Another brilliant program\n\rwritten by Mitch Langford");
+		}
+
+		private void mnuCustomer_Click(object sender, EventArgs e)
+		{
+			Form2 frmCustomer = new Form2(conString);
+			frmCustomer.ShowDialog();
 		}
 	}
 }
