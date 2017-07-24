@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.Data.SQLite;
+using System.IO;
 
 namespace sqDogBytes
 {
@@ -100,6 +101,42 @@ namespace sqDogBytes
 						   MessageBoxIcon.Question) == DialogResult.OK)
 			{
 				Application.Exit();
+			}
+		}
+
+
+		private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+		{
+			try
+			{
+				using (StreamWriter sw = new StreamWriter("dogbytes.cnfg"))
+				{
+					sw.Write(conString);
+				}
+			}
+			catch { }
+		}
+
+		private void Form1_Load(object sender, EventArgs e)
+		{
+			try
+			{
+				using (StreamReader sr = new StreamReader("dogbytes.cnfg"))
+				{
+					conString = sr.ReadLine();
+					if (conString != "Data Source =")
+					{
+						mnuTest.Enabled = true;
+						tbTest.Enabled = true;
+						ssDB.Image = Properties.Resources.db_picked;
+					}
+				}
+			}
+			catch
+			{
+				mnuTest.Enabled = false;
+				tbTest.Enabled = false;
+				ssDB.Image = Properties.Resources.db_unpicked;
 			}
 		}
 	}
