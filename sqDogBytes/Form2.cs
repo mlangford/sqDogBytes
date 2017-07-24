@@ -86,5 +86,10 @@ namespace sqDogBytes
 				MessageBox.Show("Error: " + ex.Message);
 			}
 		}
+
+		private void btnClose_Click(object sender, EventArgs e)
+		{
+			this.Close();
+		}
 	}
 }

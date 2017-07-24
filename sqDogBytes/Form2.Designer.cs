@@ -87,6 +87,7 @@
 			this.btnClose.TabIndex = 24;
 			this.btnClose.Text = "Close";
 			this.btnClose.UseVisualStyleBackColor = true;
+			this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
 			// 
 			// btnDelete
 			// 
@@ -176,6 +177,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.AutoSize = true;
 			this.ClientSize = new System.Drawing.Size(586, 403);
 			this.ControlBox = false;
 			this.Controls.Add(this.label4);
@@ -194,6 +196,7 @@
 			this.Controls.Add(this.txtID2);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
 			this.Name = "Form2";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 			this.Text = "Customer: Insert, Modify or Delete";
 			this.ResumeLayout(false);
 			this.PerformLayout();
