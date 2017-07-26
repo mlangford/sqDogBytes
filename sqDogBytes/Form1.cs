@@ -152,5 +152,11 @@ namespace sqDogBytes
 			Form2 frmCustomer = new Form2(conString);
 			frmCustomer.ShowDialog();
 		}
-	}
+
+        private void mnuItems_Click(object sender, EventArgs e)
+        {
+            Form3 frmItems = new Form3(conString);
+            frmItems.ShowDialog();
+        }
+    }
 }
